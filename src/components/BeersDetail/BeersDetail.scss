@@ -1,0 +1,52 @@
+.beer-detail{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    // height: calc(100% - 150px);
+    @media screen and (max-width: 767px) {
+        flex-direction: column;
+    }
+    &__img{
+        width: 50%;
+        img{
+            width: 50%;
+        }
+    }
+    &__content{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        font-size: 14px;
+        &-subtitle{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding-bottom: 2em;
+            padding-top: 1em;
+            width: 100%;
+        }
+        &--title{
+            font-size: 18px;
+            font-weight: 500;
+            padding-right:10px ;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+           
+            &--description, &--brewers_tips{
+                font-weight: 400;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+       
+        @media screen and (max-width: 767px) {
+            align-items: center;
+            justify-content: center;
+    
+        }
+    }
+}

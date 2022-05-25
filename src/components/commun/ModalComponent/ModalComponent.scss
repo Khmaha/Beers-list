@@ -1,0 +1,22 @@
+.modal-content {
+  .ant-modal-header {
+    border: none !important;
+  }
+  .ant-modal-footer{
+    .ant-btn-default{
+      &:hover, &:active, &:focus{
+        border-color: var(--primary-color)!important;
+        color: var(--primary-color)!important;
+      }
+    }
+    .ant-btn-primary{
+      background-color: var(--primary-color)!important;
+      color: var(--secondary-color)!important;
+      border-color: var(--primary-color)!important;
+      &:hover, &:active, &:focus{
+        background-color: var(--primary-color)!important;
+        color: var(--secondary-color)!important;
+      }
+    }
+  }
+}

@@ -1,0 +1,209 @@
+.beers-comp {
+    width: calc((950px / 3) - 20px);
+    @media screen and(max-width: 960px) {
+      width: 100%;
+    }
+    .ant-card-cover {
+      height: calc(((950px / 3) * 9) / 16);
+      @media screen and(max-width: 960px) {
+        height: calc(((950px / 2) * 9) / 16);
+      }
+    }
+    .ant-card-body{
+        padding: 24px 8px;
+    }
+    .ant-card-meta-detail{
+      width: 100%;
+    }
+    .ant-tag{
+        margin: 0!important;
+    }
+    .check-icon{
+        color: green;
+    }
+    &__skeleton {
+      width: 100% !important;
+      height: 100% !important;
+    }
+    &__img {
+      object-fit: contain;
+    }
+    &__actions, &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &--text{
+        max-width: calc(100% - 65px);
+        overflow: hidden;
+        color: rgba(0, 0, 0, 0.85);
+        font-weight: 500;
+        font-size: 16px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      &__tag {
+        order: 2;
+        display: flex;
+        justify-content: flex-end;
+      }
+      &__btns {      
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 8px;
+        &--add{
+            order: 2;
+            &:not(.ordred){
+              &:hover, &:active, &:focus{
+                color:  var(--primary-color) !important;
+                border-color: var(--primary-color) !important;
+              }
+            }
+           
+        }
+        &--delete{
+          order: 2;
+          color:  var(--red-color) !important;
+          border-color: var(--red-color) !important;
+          &:not(.ordred){
+            &:hover, &:active, &:focus{
+              color:  var(--red-color) !important;
+              border-color: var(--red-color) !important;
+            }
+          }
+         
+      }
+        &--detail{
+            order: 1;
+            color:grey!important;
+            &:hover, &:active{
+                color: var(--primary-color)!important;
+            }
+        }
+      }
+    }
+    &__title{
+      .horizontal{
+        display: flex;
+        flex-direction: row;
+      }
+      .vertical{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    &__description {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      text-align: left;
+    }
+  }
+ 
+  .order-comp,
+  .modal-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    
+    .ant-avatar > img{
+      object-fit: contain!important;
+    }
+    .ant-card-body {
+      display: flex;
+      align-items: center;
+      padding: 24px 0 !important;
+    }
+    .ant-card-actions {
+      border: none !important;
+      & > li > span:hover {
+        color: var(--color-text) !important;
+      }
+    }
+    .ant-card-meta-title {
+      @media screen and (max-width: 560px) {
+        display: inline-block !important;
+        width: 180px;
+        font-size: 14px;
+      }
+      @media screen and (max-width: 480px) {
+        width: 150px;
+        margin: 0 !important;
+      }
+      @media screen and (max-width: 300px) {
+        width: 110px;
+        margin: 0 !important;
+      }
+    }
+    .ant-card-meta-title,
+    .ant-card-meta-description {
+      display: flex;
+      justify-content: flex-start;
+    }
+    &__actions {
+      border: none;
+      font-size: 18px;
+      padding: 0 0.5em;
+      &--view{
+        &:hover{
+          color: var(--primary-color);
+        }
+      }
+      &--trash {
+        padding-left: 10px;
+        &:hover{
+          color: var(--primary-color);
+        }
+      }
+      &--volume {
+        padding: 10px;
+      }
+      
+    }
+    &__title {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+        .horizontal{
+          display: flex;
+          flex-direction: row;
+        }
+        .vertical{
+          display: flex;
+          flex-direction: column;
+          &:not(.modal){
+
+          max-width: 150px;
+          overflow: hidden;
+          font-weight: 500;
+          font-size: 16px;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          }
+         
+        }
+        &--text{
+          flex-direction: column;
+          width: 100%;
+            &:not(.modal){
+            overflow: hidden;
+            font-weight: 500;
+            font-size: 16px;
+            white-space: nowrap;
+            text-overflow: ellipsis;   
+          }
+         
+        }
+    }
+    &__avatar {
+      display: flex !important;
+      align-items: center !important;
+      width: 70px !important;
+      height: 70px !important;
+    }
+  } 
