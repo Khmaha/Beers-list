@@ -41,7 +41,6 @@ const reducer = (state = { ...initialState }, action) => {
       let findIndex = newState.cardBeerList.findIndex(
         (x) => x.id === action.payload
       );
-      console.log("findIndex", findIndex);
       if (findIndex >= 0) {
         newState.countBeers--;
         newState.cardBeerList.splice(findIndex, 1);

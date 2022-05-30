@@ -1,0 +1,7 @@
+.beers-list{
+    max-height: calc(100% - 150px);
+    overflow-x: hidden;
+    &-pagination{
+        padding-top: 10px !important;
+    }
+}

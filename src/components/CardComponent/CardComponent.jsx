@@ -5,9 +5,8 @@ import "./CardComponent.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import SkeletonComponent from "../commun/SkeletonComponent/SkeletonComponent";
-import MenuComponent from "../commun/MenuComponent/MenuComponent";
 import useHooks from "../../useHooks";
-import { CheckOutlined, EyeOutlined } from "@ant-design/icons";
+import { EyeOutlined } from "@ant-design/icons";
 import { addToCardBeerList, deleteBeerFromPannier } from "../../store/actions";
 const { Meta } = Card;
 const CardComponent = ({ beer, type }) => {

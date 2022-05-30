@@ -1,9 +1,8 @@
-import React, { useEffect, Suspense } from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import useHooks from "../../useHooks";
-import { Spin, Tag } from "antd";
-import CardComponent from "../CardComponent/CardComponent";
+import { Tag } from "antd";
 import "./BeersDetail.scss";
 import SkeletonComponent from "../commun/SkeletonComponent/SkeletonComponent";
 const BeersDetail = () => {

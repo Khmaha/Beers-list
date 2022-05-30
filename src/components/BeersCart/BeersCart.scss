@@ -1,5 +1,4 @@
 .beers-card {
-    height: calc(100% - 150px);
     padding: 1em;
     margin: auto;
     &:not(.empty){
@@ -19,7 +18,10 @@
 
      }
     }
+    &.empty{
+      height: calc(100% - 150px);
 
+    }
     @media screen and (max-width: 960px) {
       width: 100%;
       margin: 0;

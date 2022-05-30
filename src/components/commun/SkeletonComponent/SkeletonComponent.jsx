@@ -1,18 +1,10 @@
 import React from "react";
-import {
-  Skeleton,
-  Space,
-  Divider,
-  Switch,
-  Form,
-  Radio,
-  Button,
-  Input,
-} from "antd";
+import { Skeleton } from "antd";
 import "./SkeletonComponent.scss";
-const SkeletonComponent = ({ rows, size, square }) => {
+const SkeletonComponent = ({ size, square }) => {
   return (
     <Skeleton
+      className="skeleton-comp"
       active
       avatar={{ shape: square, size: size }}
       paragraph={{ rows: "4" }}
