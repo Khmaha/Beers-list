@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import "./BeersCart.scss";
 import { Button } from "antd";
@@ -9,9 +9,6 @@ const BeersCart = () => {
   const cardBeerList = state.cardBeerList;
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log("cardBeerList", cardBeerList);
-  }, []);
   return (
     <div
       className={
