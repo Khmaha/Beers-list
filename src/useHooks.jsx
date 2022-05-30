@@ -20,7 +20,6 @@ const useHooks = () => {
     }, 3000);
   }, [loading]);
   const getAllBeersCallApi = async ({ page, pageSize }) => {
-    // dispatch(setLoading({ payload: true }));
     await new Promise(async (resolve, reject) => {
       return Service.get(`/beers?page=${page}&per_page=${pageSize}`)
         .then((response) => {

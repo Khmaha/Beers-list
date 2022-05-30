@@ -3,5 +3,27 @@
     overflow-x: hidden;
     &-pagination{
         padding-top: 10px !important;
+        .ant-pagination-item{
+            &:hover{
+                a{
+                    color:var(--primary-color) !important;
+                }
+                border-color: var(--primary-color) !important;
+            }
+        }
+        .ant-pagination-item-active{
+            a{
+                color:var(--primary-color) !important;
+            }
+             border-color: var(--primary-color) !important;
+        }
+        .ant-pagination-options{
+            box-shadow: none!important;
+            .ant-select:not(.ant-select-disabled):hover, .ant-select:not(.ant-select-disabled):focus {
+                .ant-select-selector{
+                    border-color: var(--primary-color) !important;
+                }
+            } 
+        } 
     }
 }
