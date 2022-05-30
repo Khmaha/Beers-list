@@ -12,10 +12,7 @@ const BeersDetail = () => {
   const { getBeersByIdCallApi, loading } = useHooks();
   const { id } = useParams();
   const beerDetail = state.beerDetail;
-  console.log("cardBeerList", cardBeerList);
-  console.log("beerDetail", beerDetail);
   const beerOrdred = cardBeerList.filter((x) => x.id === parseInt(id));
-  console.log("beerOrdred", beerOrdred);
   useEffect(() => {
     getBeersByIdCallApi(parseInt(id));
   }, []);

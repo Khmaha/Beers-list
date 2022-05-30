@@ -20,9 +20,6 @@ const CardComponent = ({ beer, type }) => {
     cardBeerList && cardBeerList.length > 0
       ? cardBeerList.filter((x) => x.id === beer.id)
       : [];
-  console.log("beer", beer);
-  console.log("cardBeerList", cardBeerList);
-  console.log("cardBeer", cardBeer);
   const [orderSelectedBeer, setOrderSelectedBeer] = useState(-1);
   const [isModalVisible, setIsModalVisible] = useState(false);
   useEffect(() => {
@@ -38,11 +35,9 @@ const CardComponent = ({ beer, type }) => {
     await dispatch(deleteBeerFromPannier({ payload: id }));
   };
   const navigateToBeerDetail = (id) => {
-    console.log("id", id);
     navigate("/detail/" + id);
   };
   const handleOrderBeers = (beer, ordred) => {
-    console.log("clicked beer", beer);
     if (ordred) {
       dispatch(deleteBeerFromPannier({ payload: beer.id }));
       setOrderSelectedBeer(-1);

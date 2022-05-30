@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Service from "./service";
-import { useSelector, useDispatch, useStore } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   getAllBeers,
   getBeerDetail,
@@ -29,10 +29,9 @@ const useHooks = () => {
             dispatch(getAllBeers({ payload: response.data }));
             dispatch(setLoading({ payload: false }));
           }
-          console.log("response", response);
         })
         .catch((error) => {
-          console.log("erreor", error);
+          console.log("error", error);
           reject(error);
         });
     });
@@ -46,7 +45,6 @@ const useHooks = () => {
         .then((response) => {
           if (response?.status === 200) {
             resolve(response);
-            console.log("response", response);
             dispatch(getBeerDetail({ payload: response.data[0] }));
             dispatch(setLoading({ payload: false }));
           }

@@ -17,7 +17,6 @@ const CardList = ({ type }) => {
   const { getAllBeersCallApi } = useHooks();
 
   const onShowSizeChange = (current, pageSize) => {
-    console.log(current, pageSize);
     dispatch(setPageSize({ payload: pageSize }));
     getAllBeersCallApi({ page: current, pageSize: pageSize });
   };
