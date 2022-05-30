@@ -156,7 +156,7 @@ const BeersDetail = () => {
                                             beerDetail.ingredients[ingred],
                                             ingred
                                           )}
-                                          bordered
+                                          bordered={true}
                                         ></TableComponent>
                                         <PageHeader
                                           className="site-page-header"
@@ -165,16 +165,23 @@ const BeersDetail = () => {
                                         />
                                       </>
                                     )}
+                                    {typeof beerDetail.ingredients[ingred] ===
+                                      "string" && (
+                                      <PageHeader
+                                        className="site-page-header"
+                                        backIcon={false}
+                                        title={
+                                          ingred +
+                                          " :" +
+                                          beerDetail.ingredients.yeast
+                                        }
+                                      />
+                                    )}
                                   </>
                                 )}
                             </div>
                           )
                         )}
-                      <PageHeader
-                        className="site-page-header"
-                        backIcon={false}
-                        title={beerDetail.ingredients.yeast}
-                      />
                     </span>
                   </span>
                 )}
