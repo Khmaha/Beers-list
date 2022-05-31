@@ -19,9 +19,13 @@ const useHooks = () => {
       setLoadingSpin(false);
     }, 3000);
   }, [loading]);
-  const getAllBeersCallApi = async ({ page, pageSize }) => {
+  const getAllBeersCallApi = async ({ page, pageSize, beerWord }) => {
     await new Promise(async (resolve, reject) => {
-      return Service.get(`/beers?page=${page}&per_page=${pageSize}`)
+      var params = `?page=${page}&per_page=${pageSize}`;
+      if (beerWord) {
+        params = params + `&beer_name=${beerWord}`;
+      }
+      return Service.get(`/beers${params}`)
         .then((response) => {
           if (response?.status === 200) {
             resolve(response);
@@ -56,6 +60,11 @@ const useHooks = () => {
   };
   const searchBeer = (search) => {
     dispatch(searchBeerList({ payload: search }));
+    getAllBeersCallApi({
+      page: state?.page,
+      pageSize: state?.pageSize,
+      beerWord: search,
+    });
   };
 
   return {

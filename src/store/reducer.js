@@ -7,6 +7,7 @@ const initialState = {
   searchWord: "",
   countBeers: 0,
   pageSize: 10,
+  page: 1,
 };
 const reducer = (state = { ...initialState }, action) => {
   const newState = { ...state };
@@ -17,7 +18,8 @@ const reducer = (state = { ...initialState }, action) => {
       return newState;
 
     case "SET_PAGE_SIZE":
-      newState.pageSize = action.payload;
+      newState.pageSize = action.payload.pageSize;
+      newState.page = action.payload.page;
       return newState;
 
     case "GET_BEER_DETAIL":
@@ -49,10 +51,6 @@ const reducer = (state = { ...initialState }, action) => {
 
     case "SEARCH_BEER_LIST":
       newState.searchWord = action.payload;
-      newState.filtredBeers = newState.allBeers.filter((beer) =>
-        beer.name.toLowerCase().includes(action.payload.toLowerCase())
-      );
-
       return newState;
 
     default:

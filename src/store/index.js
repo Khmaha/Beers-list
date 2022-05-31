@@ -9,6 +9,7 @@ store.subscribe(() => {
     cardBeerList: store.getState().cardBeerList,
     countBeers: store.getState().countBeers,
     allBeers: store.getState().allBeers,
+    searchWord: store.getState().searchWord,
   });
 });
 
