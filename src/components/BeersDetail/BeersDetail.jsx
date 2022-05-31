@@ -44,14 +44,6 @@ const BeersDetail = () => {
           ),
       },
     ];
-    // if (type == "hops") {
-    //   columns.splice(1, 0, {
-    //     title: "Attribute",
-    //     dataIndex: "attribute",
-    //     key: "attribute",
-    //     render: (text) => <span>{text}</span>,
-    //   });
-    // }
     return columns;
   };
   const getIngredientData = (array, type) => {
@@ -68,9 +60,6 @@ const BeersDetail = () => {
           total: Math.floor(Math.random() * 90 + 10),
           passed_total: Math.floor(Math.random() * 90 + 10),
         };
-        // if (type == "hops") {
-        //   obj["attribute"] = x.attribute;
-        // }
         data.push(obj);
       });
     return data;
@@ -90,10 +79,10 @@ const BeersDetail = () => {
               <img src={beerDetail.image_url} alt="beer_img_detail" />
             </div>
             <div className="beer-detail__content">
-              <span className="beer-detail__content-subtitle">
-                <span className="beer-detail__content--title">
+              <span className="beer-detail__content__title">
+                <span className="beer-detail__content__title--subtitle">
                   <span>{beerDetail.name}</span>
-                  <span className="beer-detail__content--ordred">
+                  <span className="beer-detail__content__title--ordred">
                     <Tag color="orange">
                       {beerOrdred && beerOrdred.length > 0
                         ? "Bière commandée"
@@ -101,41 +90,44 @@ const BeersDetail = () => {
                     </Tag>
                   </span>
                 </span>
-                <span className="beer-detail__content--tagline">
+                <span className="beer-detail__content__title--tagline">
                   {beerDetail.tagline}
                 </span>
               </span>
 
-              <span className="beer-detail__content--description">
-                <span style={{ fontWeight: "bold" }}>Description:</span>
-                <span style={{ fontWeight: "400" }}>
+              <span className="beer-detail__content__description">
+                <span className="beer-detail__content__description--name">
+                  Description:
+                </span>
+                <span className="beer-detail__content__description--value">
                   {beerDetail.description}
                 </span>
               </span>
 
-              <span className="beer-detail__content--volume">
-                <span style={{ fontWeight: "bold" }}>Volume:</span>
-                {beerDetail.boil_volume.value +
-                  " " +
-                  beerDetail.boil_volume.unit}
+              <span className="beer-detail__content__volume">
+                <span className="beer-detail__content__volume--name">
+                  Volume:
+                </span>
+                <span className="beer-detail__content__volume--value">
+                  {beerDetail.boil_volume.value +
+                    " " +
+                    beerDetail.boil_volume.unit}
+                </span>
               </span>
-              <span className="beer-detail__content--brewers_tips">
-                <span style={{ fontWeight: "bold" }}>Conseils:</span>
-                {beerDetail.brewers_tips}
+              <span className="beer-detail__content__brewers_tips">
+                <span className="beer-detail__content__brewers_tips--name">
+                  Conseils:
+                </span>
+                <span className="beer-detail__content__brewers_tips--value">
+                  {beerDetail.brewers_tips}
+                </span>
               </span>
               {beerDetail.ingredients &&
                 Object.keys(beerDetail.ingredients).length > 0 && (
-                  <span className="beer-detail__content--ingredients">
+                  <span className="beer-detail__content__ingredients">
                     <span style={{ fontWeight: "bold" }}>Ingédients:</span>
-                    <span className="beer-detail__content--ingredients-description">
+                    <span className="beer-detail__content__ingredients--description">
                       {beerDetail.ingredients &&
-                        //  (
-                        //   <TableComponent
-                        //     columns={columns}
-                        //     data={data}
-                        //   ></TableComponent>
-                        // )
-
                         Object.keys(beerDetail.ingredients).length > 0 &&
                         Object.keys(beerDetail.ingredients).map(
                           (ingred, index) => (
@@ -143,8 +135,6 @@ const BeersDetail = () => {
                               {beerDetail.ingredients[ingred] &&
                                 beerDetail.ingredients[ingred].length > 0 && (
                                   <>
-                                    {/* <span>{ingred + " : "}</span> */}
-                                    {/* <span> */}
                                     {typeof beerDetail.ingredients[ingred] ===
                                       "object" && (
                                       <>
