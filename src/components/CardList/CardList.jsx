@@ -1,35 +1,34 @@
 import React, { useState } from "react";
 import CardComponent from "../CardComponent/CardComponent";
 import { useSelector, useDispatch, useStore } from "react-redux";
-import { Pagination } from "antd";
-import { setPageSize } from "../../store/actions";
+import EmptyData from "../commun/EmptyData/EmptyData";
 import "./CardList.scss";
-import useHooks from "../../useHooks";
 const CardList = ({ type }) => {
   const state = useSelector((state) => state);
-  const getBeers = state
-    ? state.searchWord
-      ? state.filtredBeers
-      : state.allBeers
-    : {};
+  const getBeers = state && state.allBeers;
 
   return (
     <>
       <div
         className={`card-list card-list${
-          type === "order" ? "--horizontal" : "--vertical"
+          type === "order"
+            ? "--horizontal"
+            : !getBeers.length
+            ? "--empty"
+            : "--vertical"
         }`}
       >
-        {state &&
-          getBeers &&
-          getBeers.length > 0 &&
+        {state && getBeers && getBeers.length > 0 ? (
           getBeers.map((beer) => (
             <CardComponent
               key={beer.id}
               beer={beer}
               type={type}
             ></CardComponent>
-          ))}
+          ))
+        ) : (
+          <EmptyData></EmptyData>
+        )}
       </div>
     </>
   );
