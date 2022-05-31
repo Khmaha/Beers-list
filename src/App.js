@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <Header></Header>
       <GetRoutes></GetRoutes>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 }
